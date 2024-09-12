@@ -1,0 +1,5 @@
+<div class="flex-container">
+<app-user *ngIf="isAuthenticated"></app-user>
+<app-login *ngIf="!isAuthenticated"></app-login>
+<app-logud *ngIf="isAuthenticated"></app-logud>
+</div>

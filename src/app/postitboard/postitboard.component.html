@@ -1,0 +1,13 @@
+<button (click)="addPostIt()">Add Post-it</button><button (click)="deleteItems()">Delete local storage</button>
+<div *ngFor="let postIt of postIts; let i = index"
+     [id]="postIt.id"
+     class="example-box"
+     cdkDrag
+     (cdkDragEnded)="onDragEnded($event, i)"
+     [ngStyle]="{ transform: 'translate3d(' + postIt.position.x + 'px, ' + postIt.position.y + 'px, 0)' }">
+  <textarea class="text-field"
+            placeholder="Type here..."
+            [(ngModel)]="postIt.text"
+            (input)="onTextChanged($event, i)"></textarea>
+  <a class="exit" (click)="deletePostIt(i)"><img width="10px" height="10px" src="/close.png"></a>
+</div>

@@ -1,0 +1,10 @@
+.container{
+   margin-right: 50px;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.custom-font {
+    font-family: 'Arial', sans-serif; /* Change to your desired font */
+    font-size: 16px; /* Adjust the font size as needed */
+}

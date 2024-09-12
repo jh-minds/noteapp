@@ -1,0 +1,4 @@
+<div class="container custom-font" *ngIf="auth.user$ | async as user">
+    <div>Name : {{ user.name }}</div>
+    <div>Email: {{ user.email }}</div>
+</div>

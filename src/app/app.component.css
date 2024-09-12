@@ -1,0 +1,53 @@
+.navbar{
+    background-color: #327387;
+    color: black;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Align content to the right */
+}
+
+.navbar > div:first-child {
+    margin-right: auto; /* Push the first div to the left */
+}
+.left-content{
+    margin-left: 10px;
+}
+.right-content{
+    margin-right: 10px;
+}
+.navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  .navbar a:hover {
+    background: #ddd;
+    color: black;
+  }
+  .custom-font {
+    font-family: 'Arial', sans-serif; /* Change to your desired font */
+    font-size: 20px; /* Adjust the font size as needed */
+}
+.middle-content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  margin: 0; /* Remove any default margin */
+}
+.middle-contentson{
+  display: flex;
+  flex-direction: column; /* Stack child elements vertically */
+  align-items: center; /* Center child elements horizontally */
+  border: 2px solid gray; /* Add border color */
+  background-color:#DCDCDC;
+  padding: 20px
+}
+
+
+  body {margin:0;}
