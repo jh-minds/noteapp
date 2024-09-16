@@ -39,4 +39,7 @@
     border: none;
     resize: none;
     box-sizing: border-box;
-}
+  }
+  .textarea{
+    outline-color:white;
+  }
