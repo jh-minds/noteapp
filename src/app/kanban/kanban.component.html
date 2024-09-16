@@ -1,56 +1,27 @@
 <div class="flex-container" cdkDropListGroup>
-    <div class="example-container">
-      <h3 class="centered">To do</h3>
-  
-      <div
-        cdkDropList
-        [cdkDropListData]="todo"
-        class="example-list"
-        (cdkDropListDropped)="drop($event)">
-        @for (item of todo; track item) {
-          <div class="example-box" cdkDrag>{{item}}</div>
-        }
-      </div>
+  <button mat-raised-button style="margin: 10px;" (click)="addContainer()">Add Container</button>
+  <div *ngFor="let container of containers" class="example-container">
+    <a class="exit" (click)="deleteContainer(container.name)">
+      <img width="10px" height="10px" src="/close.png">
+    </a>
+    <div class="centered">
+      <input class="centered" style="font-size: 30px;" [(ngModel)]="container.name" />
     </div>
-    <div class="example-container">
-      <h3 class="centered">To do</h3>
-  
-      <div
-        cdkDropList
-        [cdkDropListData]="todo"
-        class="example-list"
-        (cdkDropListDropped)="drop($event)">
-        @for (item of todo; track item) {
-          <div class="example-box" cdkDrag>{{item}}</div>
-        }
-      </div>
+    <br>
+    <div>
+      <button mat-raised-button class="left" style="margin: 10px;" (click)="addItem(container.name)">Add Item</button>
     </div>
-    <div class="example-container">
-      <h3 class="centered">To do</h3>
-  
-      <div
-        cdkDropList
-        [cdkDropListData]="todo"
-        class="example-list"
-        (cdkDropListDropped)="drop($event)">
-        @for (item of todo; track item) {
-          <div class="example-box" cdkDrag>{{item}}</div>
-        }
-      </div>
-    </div>
-    
-  
-    <div class="example-container">
-      <h3 class="centered">Done</h3>
-  
-      <div
-        cdkDropList
-        [cdkDropListData]="done"
-        class="example-list"
-        (cdkDropListDropped)="drop($event)">
-        @for (item of done; track item) {
-          <div class="example-box" cdkDrag>{{item}}</div>
-        }
+    <div
+      cdkDropList
+      [cdkDropListData]="container.items"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)">
+      <div *ngFor="let item of container.items; let i = index" class="example-box" cdkDrag>
+        <a class="exit" (click)="deleteItem(container.name, i)">
+          <img width="10px" height="10px" src="/close.png">
+        </a>
+        <textarea style="width:100%;height: 100%;resize: none;font-size: 20px;" placeholder="Placeholder..." [(ngModel)]="item.text"></textarea>
       </div>
     </div>
   </div>
+</div>
